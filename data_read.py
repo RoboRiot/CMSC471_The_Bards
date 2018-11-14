@@ -3,7 +3,7 @@
 
 import os
 
-filepath = "C:\\Users\\Harrison\\Documents\\CMSC_471_Project_Code\\ml-latest\\ml-latest\\movies.csv"
+filepath = "/Users/roboriot/OneDrive/UMBC/CLASSES/Junior_FirstSemester/CMSC471/ml-latest/movies.csv"
 
 file = open(filepath, "rt", encoding="utf8")
 
@@ -18,14 +18,14 @@ for line in file:
 	else:
 		movie_ids.append(line.split(',')[0])
 		movie_titles.append(line.split(',')[1])
-		
-		
+
+
 #print (movie_ids[34])
 #print (movie_ids[112])
 #print (len(movie_ids))
 
 
-filepath2 = "C:\\Users\\Harrison\\Documents\\CMSC_471_Project_Code\\ml-latest\\ml-latest\\ratings.csv"
+filepath2 = "/Users/roboriot/OneDrive/UMBC/CLASSES/Junior_FirstSemester/CMSC471/ml-latest/ratings.csv"
 
 file2 = open(filepath, "rt", encoding="utf8")
 
@@ -38,10 +38,7 @@ for line in file2:
 		i=i+1
 	elif line.split(',')[0] not in user_ids:
 		user_ids.append(line.split(',')[0])
-		
+
 #print (user_ids[0])
 #print (user_ids[1])
 #print (user_ids[4])
-
-
-
