@@ -68,7 +68,8 @@ for line in file2:
 #		print("User_ID: ", user_ids[3], " -- Movie_ID: ", movie_ids[x], " -- Rating: ", a[3,x])
 
 numpy.savetxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/user_item_mat.txt", a, fmt='%1.1f', delimiter=",", newline="\n")
-		
-	
+numpy.savetxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/user_ids_arr.txt", user_ids, fmt='%s', delimiter=",", newline="\n")
+numpy.savetxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/movie_ids_arr.txt", movie_ids, fmt='%s', delimiter=",", newline="\n")
+numpy.savetxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/movie_titles_arr.txt", movie_titles, fmt='%s', delimiter=",", newline="\n")
 	
 	
