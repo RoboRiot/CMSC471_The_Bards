@@ -44,11 +44,11 @@ a = numpy.ones(shape=(rows,cols))
 
 a = numpy.multiply(a, -1)
 
-print ("here?")
-
 i=0
+
+file2 = open(filepath2, "rt", encoding="utf8")
+
 for line in file2:
-	print("here?")
 	if(i == 0):
 		#will be skipping the first line since it just holds the column labels
 		i=i+1
@@ -59,13 +59,15 @@ for line in file2:
 		#first we find the index of the user id in the user_ids array
 		curr_user = user_ids.index(linesplit[0])
 		#then we find the index of the movie id in the movie_ids array
-		curr_movie = movie_ids.index(linesplit(',')[1])
+		curr_movie = movie_ids.index(linesplit[1])
 		
-		a[curr_user, curr_movie] = linesplit(',')[2]
+		a[curr_user, curr_movie] = linesplit[2]
 
-for x in range(8500):
-	if(a[3,x] != -1):
-		print("User_ID: ", user_ids[3], " -- Movie_ID: ", movie_ids[x], " -- Rating: ", a[3,x])
+#for x in range(8500):
+#	if(a[3,x] != -1):
+#		print("User_ID: ", user_ids[3], " -- Movie_ID: ", movie_ids[x], " -- Rating: ", a[3,x])
+
+numpy.savetxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/user_item_mat.txt", a, fmt='%1.1f', delimiter=",", newline="\n")
 		
 	
 	
