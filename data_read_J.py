@@ -3,6 +3,8 @@
 
 import os
 import numpy
+from sklearn.preprocessing import normalize
+
 
 filepath = "C:\\CMSC471-Python\\ml-latest-small\\movies.csv"
 file = open(filepath, "rt", encoding="utf8")
@@ -36,8 +38,7 @@ rows = len(user_ids)
 cols = len(movie_ids)
 
 
-a = numpy.ones(shape=(rows,cols))
-a = numpy.multiply(a, -1)
+a = numpy.zeros(shape=(rows,cols))
 
 file2 = open(filepath2, "rt", encoding="utf8")
 
@@ -63,6 +64,21 @@ for line in file2:
 
 numpy.savetxt("C:\\CMSC471-Python\\user_item_mat.txt", a, fmt='%1.1f', delimiter=",", newline="\n")
 numpy.save("C:\\CMSC471-Python\\user_item_mat.npy", a)
-		
+
 	
-	
+normed_matrix = normalize(a, axis=1, norm="l1")
+
+print ("Original matrix:")
+for i in range(10):
+	print ("\nLine ", i, ": ", end=" ")
+	for j in range(10):
+		print (a.item((i, j)), end=" ")
+
+print ("Normalized matrix:")
+for i in range(10):
+	print ("\nLine ", i, ": ", end=" ")
+	for j in range(10):
+		print (normed_matrix.item((i, j)), end=" ") 
+
+
+
