@@ -2,8 +2,11 @@
 #userID's and movieID's will be moved into a dictionary matching them to indices which will be used for the matrix
 
 import os
+import numpy
 
-filepath = "C:\\Users\\Harrison\\Documents\\CMSC_471_Project_Code\\ml-latest\\ml-latest\\movies.csv"
+filepath = "C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\ml-latest\\movies.csv"
+
+
 
 file = open(filepath, "rt", encoding="utf8")
 
@@ -25,7 +28,7 @@ for line in file:
 #print (len(movie_ids))
 
 
-filepath2 = "C:\\Users\\Harrison\\Documents\\CMSC_471_Project_Code\\ml-latest\\ml-latest\\ratings.csv"
+filepath2 = "C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\ml-latest\\ratings.csv"
 
 file2 = open(filepath, "rt", encoding="utf8")
 
@@ -42,5 +45,12 @@ for line in file2:
 #print (user_ids[0])
 #print (user_ids[1])
 #print (user_ids[4])
+
+
+rows = len(user_ids)
+cols = len(movie_ids)
+
+a = numpy.zeros(shape=(5,2))
+print (a)
 
 
