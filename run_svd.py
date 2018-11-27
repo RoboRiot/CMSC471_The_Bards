@@ -10,6 +10,12 @@ from scipy.sparse.linalg import svds, eigs
 data = numpy.loadtxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/user_item_mat.txt", delimiter=",")
 
 
+#****************************
+#LOAD NEW USER TXT
+#APPEND IT AS FINAL ROW IN data
+#**********************************
+
+
 #convert the data to a scipy sparse matrix
 scipy_data = csc_matrix(data)
 
