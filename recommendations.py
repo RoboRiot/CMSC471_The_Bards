@@ -21,9 +21,18 @@ sorted_ids = movie_ids.copy() #should now hold the movie ids in original order
 
 #insertion sort
 #inefficient sorting algorithm but it will be easy to maintain the sorted_ids array while sorting the values into the sorted_ratings array
-for x in range(1, col_count):
+#goal here is to sort the predicted user ratings into descended order
+#we also have to sort the movie_ids array in the same order so that we can determine what the ratings are for
+for i in range(1, col_count):
 	j = i-1
-	next = sorted_ratings[row_count - 1, i]
-	while(sorted_ratings[row_count - 1, j] < next) and (j >= 0):
-		
-		
+	next = sorted_ratings[i]
+	next_id = sorted_ids[i]
+	while(sorted_ratings[j] < next) and (j >= 0):
+		sorted_ratings[j+1] = sorted_ratings[j]
+		sorted_ids[j+1] = sorted_ids[j]
+		j = j - 1
+	sorted_ratings[j+1] = next
+	sorted_ids[j+1] = next_id
+
+
+print(sorted_ratings)	
