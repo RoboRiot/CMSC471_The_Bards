@@ -10,8 +10,7 @@ from scipy.sparse.linalg import svds, eigs
 data = numpy.loadtxt("/Users/roboriot/OneDrive/UMBC/CLASSES/Junior_FirstSemester/CMSC471/user_item_mat.txt", delimiter=",")
 newUser = numpy.loadtxt("/Users/roboriot/OneDrive/UMBC/CLASSES/Junior_FirstSemester/CMSC471/newUser.txt",delimiter="," )
 
-data.append(newUser)
-
+data = numpy.vstack([data, newUser])
 #convert the data to a scipy sparse matrix
 scipy_data = csc_matrix(data)
 
