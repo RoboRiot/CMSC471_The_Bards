@@ -8,12 +8,10 @@ from scipy.sparse.linalg import svds, eigs
 
 #we will first load our user-item matrix into data
 data = numpy.loadtxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/user_item_mat.txt", delimiter=",")
+newUser = numpy.loadtxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/newUser.txt",delimiter="," )
 
 
-#****************************
-#LOAD NEW USER TXT
-#APPEND IT AS FINAL ROW IN data
-#**********************************
+data = numpy.vstack([data, newUser])
 
 
 #convert the data to a scipy sparse matrix
@@ -21,15 +19,10 @@ scipy_data = csc_matrix(data)
 
 #perform scipy sparse svd on the matrix
 #NOTE: we will need to determine a K parameter value
-#To do this:
-#1. Run our algorithm without a low K value on training set
-#2. Then run on validation set and compute Root Mean Square Error
-#3. Repeats steps 1 and 2, increasing K, and find the K value that minimizes the Root Mean Square Error
 #Remember: 1 <= K < MIN(matrix.rows, matrix.columns)
-
+#Professor Mittal recommended that we use 10-20 for k instead of worrying about optimizing the rank
 #Basically, a higher K value will overfit our data to our training set, so this is the key component of our recommendation engine
-#For movies, lower rank matricies with 20 <= k <= 100 has been shown to be a good range for accurate predictions
-U, S, Vt = svds(scipy_data, k=50)
+U, S, Vt = svds(scipy_data, k=15)
 
 #converts S from an list of values into a diagonal matrix
 S = numpy.diag(S)
