@@ -20,6 +20,11 @@ All of the files submitted should be put into this folder, this includes:
 4. results.py
 5. driver.py
 6. Movie_List.txt
+7. ml-latest-small (folder)
+	a. links.csv
+	b. movies.csv
+	c. ratings.csv
+	d. tags.csv
 
 Now, run your command prompt in administrator mode.  Several python libraries will need to be installed before the system can be run.  Install these libraries with the following commands, run one after the other in the command prompt (run everything INSIDE the quotation marks):
 
@@ -32,7 +37,7 @@ Once these commands have been successfully run, it's now time to run the program
 Inside your command prompt (admin mode no longer required):
 
 1. Navigate to the directory containing the python files (C:/movie_recs/)
-2. Print the contents of the directory to ensure that all six files are present
+2. Print the contents of the directory to ensure that all six files and the folder "ml-latest-small" are present
 3. Run the command "python driver.py"
 	a. The program will begin to run here, but it will take a few moments before you are prompted further
 4. Once the program asks you which movie you would like to rate, open up the file "Movie_List.txt"

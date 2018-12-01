@@ -28,10 +28,12 @@ for line in file:
 			first_quote = line.index('\"')
 			second_quote = line.index('\"', first_quote+1)
 			
-			movie_titles.append(line[first_quote + 1:second_quote])#substring of line between the two quotation marks
+			title = str(i) + ". " + line[first_quote + 1:second_quote]
+			movie_titles.append(title)#substring of line between the two quotation marks
 		else:	
-			movie_titles.append(line.split(',')[1])
-			
+			title = str(i) + ". " + line.split(',')[1]
+			movie_titles.append(title)
+		i = i + 1
 
 filepath2 = "C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\ml-latest-small\\ratings.csv"
 
