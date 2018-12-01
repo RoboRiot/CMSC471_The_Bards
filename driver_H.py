@@ -1,4 +1,5 @@
 
+import os
 import os.path
 import time
 
@@ -6,7 +7,7 @@ import time
 filepath1 = "C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\movie_titles_arr.txt"
 filepath2 = "C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\newUser.txt"
 filepath3 = "C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\predictions_mat.txt"
-
+filepath4 = "C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\completion_indicator.txt"
 
 
 #first we run data_read_H.py
@@ -47,3 +48,19 @@ time.sleep(5)
 
 #now we can safely run the last file which prints the recommendations
 import recommendations
+
+#now we wait until the last file has completed running
+while not os.path.exists(filepath4):
+	time.sleep(1)
+	
+#now the recommendations have been given, and we can safely delete all text files in order to allow the program to run again
+os.remove("C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\movie_ids_arr.txt")
+os.remove("C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\movie_titles_arr.txt")
+os.remove("C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\newUser.txt")
+os.remove("C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\predictions_mat.txt")
+os.remove("C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\user_ids_arr.txt")
+os.remove("C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\user_item_mat.txt")
+os.remove("C:\\Users\\Harrison Mann\\Documents\\CMSC_471_Project_Code\\completion_indicator.txt")
+
+
+

@@ -65,3 +65,7 @@ for i in range(0, col_count):
 		#print(movie_titles[initial_index], "\n")
 		
 print("---------------------------------------------------------\n")
+
+#this is basically just a garbage file that we create here after the recommendations are given
+#this allows the driver to know when all other files are done being used, so it can delete them safely in order to allow the program to run again
+numpy.savetxt("/Users/Harrison Mann/Documents/CMSC_471_Project_Code/completion_indicator.txt", sorted_ratings, fmt='%1.3f', delimiter=",", newline="\n")
